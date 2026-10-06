@@ -1,7 +1,4 @@
-package lw01.prelab;
-
 public class MonoPrint extends PrintJob {
-    private static final int RATE_PER_PAGE = 500;
 
     public MonoPrint(String id, int pages) {
         super(id, pages);
@@ -9,7 +6,16 @@ public class MonoPrint extends PrintJob {
 
     @Override
     public int calculateCharge() {
-        return getPages() * RATE_PER_PAGE;
+        int pages = getPages();
+        int printingCost;
+
+        if (pages <= 10) {
+            printingCost = pages * 1000;
+        } else {
+            printingCost = (10 * 1000) + ((pages - 10) * 500);
+        }
+
+        return printingCost + 1000;
     }
 
     @Override

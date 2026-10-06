@@ -16,7 +16,8 @@ public class Main {
 
         try {
             // Path file diubah di sini
-            Scanner scanner = new Scanner(new File("src/lw02/prelab/transactions.txt"));
+            Scanner scanner;
+            scanner = new Scanner(new File("src/lw02/prelab/transactions.txt"));
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
